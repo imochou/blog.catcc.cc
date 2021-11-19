@@ -1,15 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.catcc.cc</id>
-    <title>Gridea</title>
-    <updated>2021-11-19T14:51:42.312Z</updated>
+    <title>猫才才</title>
+    <updated>2021-11-19T15:08:03.789Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.catcc.cc"/>
     <link rel="self" href="https://blog.catcc.cc/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>温故而知新，可以为师矣。</subtitle>
     <logo>https://blog.catcc.cc/images/avatar.png</logo>
     <icon>https://blog.catcc.cc/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
+    <rights>All rights reserved 2021, 猫才才</rights>
+    <entry>
+        <title type="html"><![CDATA[我是测试标题]]></title>
+        <id>https://blog.catcc.cc/post/wo-shi-ce-shi-biao-ti/</id>
+        <link href="https://blog.catcc.cc/post/wo-shi-ce-shi-biao-ti/">
+        </link>
+        <updated>2021-11-19T14:48:49.000Z</updated>
+        <content type="html"><![CDATA[<p>测试文章<br>
+普通的方法，只能实现网站首页https，</p>
+<p>RewriteEngine on</p>
+<p>RewriteCond %{HTTP_HOST} !^www.cglw.com$ [NC]</p>
+<p>RewriteRule ^(.*)$ https://www.cglw.com/$1 [L,R=301]</p>
+<p>用以下代码，才可以实现整站http301跳转至https，</p>
+<p>RewriteEngine On</p>
+<p>RewriteBase /</p>
+<p>RewriteCond %{SERVER_PORT} !^443$</p>
+<h1 id="rewriterule-httpsserver_namerequest_uri-lr301">RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R=301]</h1>
+<p>.htaccess 一段神奇的跳转代码</p>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} ^.*(google|ask|yahoo|youtube|wikipedia|excite|altavista|msn|aol|goto|infoseek|lycos|search|bing|dogpile|facebook|twitter|live|myspace|linkedin|flickr)\.(.*)
+RewriteRule ^(.*)$ http://跳转网址 [R=301,L]
+</IfModule>
+<p>写在.htaccess中</p>
+<p>一：http跳转https</p>
+<p>RewriteCond %{SERVER_PORT} !^443$<br>
+RewriteRule (.*) https://%{SERVER_NAME}/$1 [R=301,L]<br>
+二：不带www跳转到带www</p>
+<p>RewriteCond %{http_host} ^ub07.com [NC]<br>
+RewriteRule ^(.*)$ http://www.ub07.com/$1 [L,R=301]<br>
+三：带www跳转到不带www</p>
+<p>RewriteCond %{http_host} ^www.jipinji.cn [NC]<br>
+RewriteRule ^(.*)$ http://jipinji.cn/$1 [L,R=301]</p>
+<p>#开启伪静态<br>
+RewriteEngine On<br>
+#http 301重定向到https, 并且不带www跳转到带www<br>
+RewriteCond %{HTTP_HOST} ^123.com [NC]<br>
+RewriteRule ^(.*)$ https://www.123.com/<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>[</mo><mi>L</mi><mo separator="true">,</mo><mi>R</mi><mo>=</mo><mn>301</mn><mo>]</mo><mi>R</mi><mi>e</mi><mi>w</mi><mi>r</mi><mi>i</mi><mi>t</mi><mi>e</mi><mi>C</mi><mi>o</mi><mi>n</mi><mi>d</mi><mi>R</mi><mi>e</mi><mi>w</mi><mi>r</mi><mi>i</mi><mi>t</mi><mi>e</mi><mi>R</mi><mi>u</mi><mi>l</mi><msup><mi>e</mi><mo>(</mo></msup><mi mathvariant="normal">.</mi><mo>∗</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">1 [L,R=301]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mopen">[</span><span class="mord mathdefault">L</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mord">1</span><span class="mclose">]</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mopen mtight">(</span></span></span></span></span></span></span></span><span class="mord">.</span><span class="mord">∗</span><span class="mclose">)</span></span></span></span> https://www.123.com/$1 [L,R=301]</p>
+<p>RewriteEngine on<br>
+RewriteBase /<br>
+RewriteCond %{SERVER_PORT} !^443<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mi>e</mi><mi>w</mi><mi>r</mi><mi>i</mi><mi>t</mi><mi>e</mi><mi>R</mi><mi>u</mi><mi>l</mi><msup><mi>e</mi><mi mathvariant="normal">.</mi></msup><mo>∗</mo></mrow><annotation encoding="application/x-tex">
+RewriteRule ^.*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.436892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">.</span></span></span></span></span></span></span></span><span class="mord">∗</span></span></span></span> https://%{SERVER_NAME}%{REQUEST_URI} [L,R]</p>
+<p>重要提示：必须将代码放到.htaccess文件内容的最前面，以保证重定向优先权，如果与本身有的规则重复，只需写4、5行即可。<br>
+<IfModule mod_rewrite.c><br>
+RewriteEngine On<br>
+RewriteBase /<br>
+RewriteCond %{SERVER_PORT} !^443<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mi>e</mi><mi>w</mi><mi>r</mi><mi>i</mi><mi>t</mi><mi>e</mi><mi>R</mi><mi>u</mi><mi>l</mi><msup><mi>e</mi><mi mathvariant="normal">.</mi></msup><mo>∗</mo></mrow><annotation encoding="application/x-tex">
+RewriteRule ^.*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.436892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">.</span></span></span></span></span></span></span></span><span class="mord">∗</span></span></span></span> https://%{SERVER_NAME}%{REQUEST_URI} [L,R=301]<br>
+</IfModule></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://blog.catcc.cc/post/hello-gridea/</id>
